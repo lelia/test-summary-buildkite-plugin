@@ -20,6 +20,7 @@ module TestSummaryBuildkitePlugin
       if markdown.nil? || markdown.empty?
         puts('No errors found! 🎉')
         Agent.run('annotate', '--context', context, '--style', 'success', stdin: ':karate: API tests passing! :tada:')
+        puts('Finished annotating build! :buildkite:')
       else
         annotate(markdown)
       end
