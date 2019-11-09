@@ -18,7 +18,9 @@ module TestSummaryBuildkitePlugin
         fail_on_error: fail_on_error
       ).markdown
       if markdown.nil? || markdown.empty?
+        style: 'success'
         puts('No errors found! 🎉')
+        annotate(':karate: API tests passing! :tada:')
       else
         annotate(markdown)
       end
