@@ -19,7 +19,8 @@ module TestSummaryBuildkitePlugin
       end
 
       def markdown(input)
-        return nil if input.failures.count.zero?
+        # force markdown to return passing results
+        # return nil if input.failures.count.zero?
         [heading(input), input_markdown(input), footer(input)].compact.join("\n\n")
       end
 
